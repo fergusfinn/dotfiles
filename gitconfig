@@ -1,0 +1,48 @@
+[user]
+	email = fergus.barratt00@gmail.com
+	name = Fergus
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+  dv = !nvim -c "DiffviewOpen"
+  dvh = !nvim -c "DiffviewFileHistory"    
+  # Status/Info
+  s = status -s                     # Short status
+  st = status                       # Full status
+  lg = !git log --graph --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --author='^((?!(github-actions|Actions)).*)$' --perl-regexp --branches --remotes
+  ls = !git log -n 20 --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --author='^((?!(github-actions|Actions)).*)$' --perl-regexp $(git branch --show-current)
+
+
+
+  # Branch operations
+  b = branch                        # List branches
+  co = checkout                     # Checkout
+  cb = checkout -b                  # Create and checkout new branch
+  bd = branch -d                    # Delete branch
+  bD = branch -D                    # Force delete branch
+
+  # Common operations
+  aa = add -A                       # Add all changes
+  cm = commit -m                    # Commit with message
+  ca = commit --amend              # Amend last commit
+  can = commit --amend --no-edit   # Amend without editing message
+  
+  # Stash operations
+  sp = stash pop                    # Pop latest stash
+  sl = stash list                   # List stashes
+  ss = stash save                   # Save stash with message
+
+  # Reset/Clean
+  unstage = reset HEAD --           # Unstage files
+  undo = reset --soft HEAD^         # Undo last commit, keep changes
+  clean-branches = !git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d  # Clean merged branches
+
+  # Information
+  who = shortlog -s --              # Show commit counts by author
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'  # Show 10 most recent branches
