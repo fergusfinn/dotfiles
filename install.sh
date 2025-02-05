@@ -1,3 +1,4 @@
+#!/bin/bash
 # File searching utilities
 sudo apt update && sudo apt install -y lsd fzf zsh
 
