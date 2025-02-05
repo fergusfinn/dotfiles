@@ -1,3 +1,11 @@
+#
+if [[ $(uname) == "Darwin" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    # macOS (Homebrew) paths
+    source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
+    source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+fi
+
 # Requires nvim, exa, kubectl, starship, zoxide, fzf
 alias vim="nvim"
 alias ls="exa"
