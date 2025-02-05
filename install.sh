@@ -5,10 +5,6 @@ set -e
 mkdir -p ~/.local/bin
 export PATH="$HOME/.local/bin/:$PATH"
 
-# Move dotfiles to home directory
-cp zshrc ~/.zshrc
-cp gitconfig ~/.gitconfig
-
 # Detect OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Install Homebrew if not installed
@@ -40,5 +36,9 @@ fi
 # Setup nvim config
 mkdir -p ~/.config/nvim
 cp -rf nvim/* ~/.config/nvim/
+
+# Move dotfiles to home directory
+cp zshrc ~/.zshrc
+cp gitconfig ~/.gitconfig
 
 echo "Installation complete! Please restart your terminal for changes to take effect."
