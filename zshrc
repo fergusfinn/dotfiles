@@ -8,7 +8,7 @@ fi
 
 # Requires nvim, exa, kubectl, starship, zoxide, fzf
 alias vim="nvim"
-alias ls="exa"
+alias ls="eza"
 alias k="kubectl"
 alias awk="gawk"
 export EDITOR=nvim
