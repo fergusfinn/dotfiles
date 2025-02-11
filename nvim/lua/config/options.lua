@@ -16,6 +16,22 @@ vim.g.root_spec = { "cwd" }
 
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.opt.swapfile = false
+vim.g.rustaceanvim = {
+  -- Plugin configuration
+  -- tools = {},
+  -- LSP configuration
+  server = {
+    default_settings = {
+      -- rust-analyzer language server configuration
+      ["rust-analyzer"] = {
+        diagnostics = { enable = true, disabled = { "unresolved-proc-macro" } },
+        procMacro = { enable = true, ignored = {} },
+      },
+    },
+  },
+  -- DAP configuration
+  -- dap = {},
+}
 
 for _, method in ipairs({ "textDocument/diagnostic", "workspace/diagnostic" }) do
   local default_diagnostic_handler = vim.lsp.handlers[method]

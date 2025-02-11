@@ -26,15 +26,9 @@ return {
     end,
   },
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      setup = {
-        clangd = function(_, opts)
-          opts.capabilities.offsetEncoding = { "utf-16" }
-          opts.filetypes = { "c", "cpp" }
-        end,
-      },
-    },
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
   {
     "folke/snacks.nvim",
