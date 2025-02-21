@@ -14,7 +14,8 @@ alias awk="gawk"
 export EDITOR=nvim
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-source <(fzf --zsh)
+eval "$(atuin init zsh --disable-up-arrow)"
+
 
 set -o emacs
 autoload edit-command-line
