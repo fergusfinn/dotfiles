@@ -10,8 +10,8 @@
 	required = true
 
 [alias]
-  dv = !nvim -c "DiffviewOpen"
-  dvh = !nvim -c "DiffviewFileHistory"    
+  dv = !sh -c 'nvim -c \"DiffviewOpen $*\"' -
+
   # Status/Info
   s = status -s                     # Short status
   st = status                       # Full status
@@ -31,7 +31,9 @@
   aa = add -A                       # Add all changes
   cm = commit -m                    # Commit with message
   ca = commit --amend              # Amend last commit
-  can = commit --amend --no-edit   # Amend without editing message
+  can = commit --amend --no-edit   # amend without editing message
+
+  rc = rebase --continue
   
   # Stash operations
   sp = stash pop                    # Pop latest stash

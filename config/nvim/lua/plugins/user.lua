@@ -18,6 +18,13 @@ return {
         desc = "Toggle Diffview window",
       },
     },
+    opts = {
+      view = {
+        merge_tool = {
+          layout = "diff3_mixed",
+        },
+      },
+    },
   },
   {
     "tiagovla/scope.nvim",
