@@ -26,6 +26,18 @@ vim.g.rustaceanvim = {
       ["rust-analyzer"] = {
         diagnostics = { enable = true, disabled = { "unresolved-proc-macro" } },
         procMacro = { enable = true, ignored = {} },
+        files = {
+          excludeDirs = {
+            ".git",
+            ".venv",
+            "bin",
+            "hooks",
+            "node_modules",
+            "po",
+            "screenshots",
+            "target",
+          },
+        },
       },
     },
   },

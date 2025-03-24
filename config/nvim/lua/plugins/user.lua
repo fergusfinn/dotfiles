@@ -43,4 +43,5 @@ return {
       scroll = { enabled = false },
     },
   },
+  { "tpope/vim-fugitive" },
 }
